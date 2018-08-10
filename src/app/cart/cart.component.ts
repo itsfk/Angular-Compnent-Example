@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import {enableProdMode} from '@angular/core';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-
-  constructor() { }
+@Input() items = [];
+@Output() itemAdded = new EventEmitter<string>();
+newItem = '';
+  constructor() {
+  }
 
   ngOnInit() {
   }
-
+  onAddItem() {
+  this.itemAdded.emit(this.newItem);
+  }
 }
+
