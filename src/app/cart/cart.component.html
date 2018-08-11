@@ -4,9 +4,15 @@
 class="btn" [ngClass]="{'btn-primary': newItem!=='','btn-default':newItem===''}">Add Item</button>
 <hr>
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let item of items; let i = index"> {{ item }} </li>
+  <li class="list-group-item" *ngFor="let item of items; let i = index"
+  [ngStyle]="{backgroundColor: i % 2 === 0 ? 'yellow' : 'blue' }"
+
+  > {{ item }} </li>
 </ul>
 <!-- the direcctive with * are structured directive
 ng class is non structured that allows to change css with conditions
 let i = index to extract the index of array
+ngStyle is used to control styles
+ngIf is a structured Directed
+* structred directive are used to change the dom its not hiding but changing the dom
 -->
