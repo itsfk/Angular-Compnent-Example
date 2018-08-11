@@ -8,7 +8,7 @@ import {enableProdMode} from '@angular/core';
 export class CartComponent implements OnInit {
 @Input() items = [];
 @Output() itemAdded = new EventEmitter<string>();
-newItem = 'Add new Item';
+newItem = '';
   constructor() {
   }
 
